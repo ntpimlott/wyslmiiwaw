@@ -15,9 +15,9 @@ const TypeWriter: React.FC<TypeWriterProps> = ({
   isTyping,
   setIsTyping,
 }) => {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [prevInputText, setPrevInputText] = useState(inputText);
+  const [text, setText] = useState<string>("");
+  const [index, setIndex] = useState<number>(0);
+  const [prevInputText, setPrevInputText] = useState<string>(inputText);
 
   useEffect(() => {
     if (prevInputText !== inputText) {
