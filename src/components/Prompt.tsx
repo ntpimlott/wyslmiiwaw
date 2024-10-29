@@ -10,18 +10,18 @@ interface TextInputs {
 const typedTextInputs: TextInputs = textInputs;
 
 const Prompt: React.FC = () => {
-  const [prompt, setPrompt] = React.useState("a worm");
-  const [isDeleting, setIsDeleting] = React.useState(false);
-  const [isTyping, setIsTyping] = React.useState(true);
-  const [isHoverPlay, setIsHoverPlay] = React.useState(false);
+  const [prompt, setPrompt] = React.useState<string>("a worm");
+  const [isDeleting, setIsDeleting] = React.useState<boolean>(false);
+  const [isTyping, setIsTyping] = React.useState<boolean>(true);
+  const [isHoverPlay, setIsHoverPlay] = React.useState<boolean>(false);
 
-  const playStyle = isHoverPlay ? "bi bi-play-circle-fill" : "bi bi-play-circle";
+  const playStyle:string = isHoverPlay ? "bi bi-play-circle-fill" : "bi bi-play-circle";
 
   useEffect(() => {
     localStorage.setItem("prompts", JSON.stringify([]));
   }, []);
 
-  const textInputKeys = Object.keys(typedTextInputs);
+  const textInputKeys:string[] = Object.keys(typedTextInputs);
 
   const cyclePrompt = () => {
     if (!isDeleting && !isTyping) {
